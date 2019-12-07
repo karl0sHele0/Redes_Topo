@@ -1,0 +1,6 @@
+Noroeste>en
+Noroeste#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Noroeste(config)#int g0/0
+Noroeste(config-if)#ip addr 130.45.43.1 255.255.0.0
+Noroeste(config-if)#no shut
