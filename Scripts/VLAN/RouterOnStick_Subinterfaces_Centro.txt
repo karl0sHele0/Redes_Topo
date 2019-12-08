@@ -1,0 +1,21 @@
+en
+conf t
+int g0/0.30
+enc dot1q 30
+ip addr 130.45.128.1 255.255.255.192
+
+int g0/0.35
+enc dot1q 35
+ip addr 130.45.128.65 255.255.255.192
+
+int g0/0.40
+enc dot1q 40
+ip addr 130.45.128.129 255.255.255.192
+
+int g0/0.95
+enc dot1q 95
+ip addr 130.45.128.193 255.255.255.192
+
+do sh ip int br
+
+ 
