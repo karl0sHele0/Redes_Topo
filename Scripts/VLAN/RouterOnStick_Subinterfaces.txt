@@ -1,0 +1,44 @@
+Noroeste(config)#int g0/0.10
+Noroeste(config-subif)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0.10, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0.10, changed state to up
+
+Noroeste(config-subif)#enc dot1q 10
+Noroeste(config-subif)#ip addr 130.45.43.1 255.255.255.192
+Noroeste(config-subif)#int g0/0.15
+Noroeste(config-subif)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0.15, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0.15, changed state to up
+
+Noroeste(config-subif)#enc dot1q 15
+Noroeste(config-subif)#ip addr 130.45.43.65 255.255.255.192
+Noroeste(config-subif)#int g0/0.20
+Noroeste(config-subif)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0.20, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0.20, changed state to up
+
+Noroeste(config-subif)#enc dot1q 20
+Noroeste(config-subif)#ip addr 130.45.43.129 255.255.255.192
+Noroeste(config-subif)#int g0/0.90
+Noroeste(config-subif)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0.90, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0.90, changed state to up
+
+Noroeste(config-subif)#enc dot1q 90
+Noroeste(config-subif)#ip addr 130.45.43.193 255.255.255.192
+Noroeste(config-subif)#do sh ip int br
+Interface              IP-Address      OK? Method Status                Protocol 
+GigabitEthernet0/0     unassigned      YES manual up                    up 
+GigabitEthernet0/0.10  130.45.43.1     YES manual up                    up 
+GigabitEthernet0/0.15  130.45.43.65    YES manual up                    up 
+GigabitEthernet0/0.20  130.45.43.129   YES manual up                    up 
+GigabitEthernet0/0.90  130.45.43.193   YES manual up                    up 
+GigabitEthernet0/1     unassigned      YES NVRAM  administratively down down 
+Serial0/0/0            unassigned      YES NVRAM  administratively down down 
+Serial0/0/1            unassigned      YES NVRAM  administratively down down 
+Vlan1                  unassigned      YES NVRAM  administratively down down
+Noroeste(config-subif)#
