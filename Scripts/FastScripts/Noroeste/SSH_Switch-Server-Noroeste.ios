@@ -1,0 +1,26 @@
+!--Configuracion SSH Switch-Server-Noroeste
+en
+conf t
+
+int vlan 90
+
+ip addr 130.45.43.254 255.255.255.192
+ip default-gateway 130.45.43.193
+ip domain-name ramoso.com.mx
+crypto key generate rsa
+2048
+ip ssh version 2
+line vty 0 15
+
+!--Entra a modo de configuracion de Lineas
+transport input ssh
+login local
+exit
+
+username admin privilege 15 secret 1234
+enable secret 1234
+
+
+
+  !--No es necesario si ya tiene Nombre
+host Sw_Server  

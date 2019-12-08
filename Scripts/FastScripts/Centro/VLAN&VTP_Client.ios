@@ -1,0 +1,25 @@
+!--Configuracion de VLAN(VTP) en Switch cliente
+en
+conf t
+vtp mode client
+vtp domain ramoso.com.mx
+vtp password 1234
+
+int range f0/2-6
+sw acc vl 30
+
+int range f0/7-12
+sw acc vl 35
+
+int range f0/13-18
+sw acc vl 40
+
+int range f0/19-24
+sw acc vl 95
+
+do sh vl br
+do sh vtp status
+
+!------Solo en switch intermedio---
+int g0/2
+sw mo tr

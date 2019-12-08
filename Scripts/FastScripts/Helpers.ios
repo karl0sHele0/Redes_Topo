@@ -1,0 +1,34 @@
+!--Mostrar lista de VLANS
+do sh vl br
+
+!--Mostrar la configuracion de VTP
+do sh vtp status
+
+!--Mostrar la configuracion de interfaces del router
+do sh ip int br
+
+!--Mostrar las conexiones de Ruteo en el Router
+do sh ip route
+
+!--Mostrar los protocolos de enrutamiento Activos [Debe aparecer RIP]
+do sh ip protocols
+
+!--Asignacion de IP a una interfaz
+ip address 130.45.128.1 255.255.255.192
+
+!--Configurar un rango de interfaces
+int range g0/1-2
+
+!--Eliminar configuracion de Arranque
+erase startup-config
+
+!--Eliminar configuracion de VLANS
+Switch#del flash:/vlan.dat
+Delete filename [/vlan.dat]?
+Delete flash:/vlan.dat? [confirm]
+
+!--Reiniciar el Switch/Router
+reload
+
+
+

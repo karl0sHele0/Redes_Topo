@@ -1,0 +1,13 @@
+!--Configuracion SSH Router-Noroeste
+en
+conf t
+
+ip domain-name ramoso.com.mx
+username admin privilege 15 secret 1234
+crypto key generate rsa
+2048
+ip ssh version 2
+enable secret 1234
+line vty 0 15
+transport input ssh
+login local
