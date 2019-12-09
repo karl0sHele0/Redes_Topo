@@ -1,0 +1,75 @@
+!--Configuracion de DHCP-Server-Router Centro
+en
+conf t
+!--Exclude de las VLANs de Centro[30,35,40,95]
+ip dhcp excluded-address 130.45.128.1 130.45.128.4
+ip dhcp excluded-address 130.45.128.65 130.45.128.68
+ip dhcp excluded-address 130.45.128.129 130.45.128.132
+ip dhcp excluded-address 130.45.128.193 130.45.128.196
+
+!--Exclude de las VLANs de Occidente[70,75]
+ip dhcp excluded-address 130.45.172.1 130.45.172.4
+ip dhcp excluded-address 130.45.172.129 130.45.172.132
+
+!--Exclude de las VLANs de Noroeste [10,15,20,90]
+ip dhcp excluded-address 130.45.43.1 130.45.43.4
+ip dhcp excluded-address 130.45.43.65 130.45.43.68
+ip dhcp excluded-address 130.45.43.129 130.45.43.132
+ip dhcp excluded-address 130.45.43.193 130.45.43.196
+
+!--Exclude de las VLANs de Bajas[50,55]
+ip dhcp excluded-address 130.45.1.1 130.45.1.4
+ip dhcp excluded-address 130.45.1.129 130.45.1.132
+
+!--Pools del Router Centro
+ip dhcp pool VL30
+network 130.45.128.0 255.255.255.192
+default-router 130.45.128.1
+
+ip dhcp pool VL35
+network 130.45.128.64 255.255.255.192
+default-router 130.45.128.65
+
+ip dhcp pool VL40
+network 130.45.128.128 255.255.255.192
+default-router 130.45.128.129
+
+ip dhcp pool VL95
+network 130.45.128.192 255.255.255.192
+default-router 130.45.128.193
+
+!--Pools del Router de Occidente
+ip dhcp pool VL70
+network 130.45.172.0 255.255.255.128
+default-router 130.45.172.1
+
+ip dhcp pool VL75
+network 130.45.172.128 255.255.255.128
+default-router 130.45.172.129
+
+!--Pools del Router Nororeste
+ip dhcp pool VL10
+network 130.45.43.0 255.255.255.192
+default-router 130.45.43.1
+
+ip dhcp pool VL15
+network 130.45.43.64 255.255.255.192
+default-router 130.45.43.65
+
+ip dhcp pool VL20
+network 130.45.43.128 255.255.255.192
+default-router 130.45.43.129
+
+ip dhcp pool VL90
+network 130.45.43.192 255.255.255.192
+default-router 130.45.43.193
+
+!--Pools del Router Bajas
+ip dhcp pool VL50
+network 130.45.1.0 255.255.255.128
+default-router 130.45.1.1
+
+ip dhcp pool VL55
+network 130.45.1.128 255.255.255.128
+default-router 130.45.1.129
+

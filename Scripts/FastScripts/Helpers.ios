@@ -33,5 +33,13 @@ Delete flash:/vlan.dat? [confirm]
 !--Reiniciar el Switch/Router
 reload
 
+!--Mostrar las listas de DHCP configuradas
+do sh ip dhcp pool
+
+!--Eliminar una lista de DHCP
+no ip dhcp pool "nom-list"
+
+!--Elimina un rango de exclusion en DHCP-Server
+no ip dhcp excluded-address 172.24.20.2
 
 
