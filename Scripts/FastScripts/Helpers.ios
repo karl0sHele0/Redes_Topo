@@ -19,6 +19,9 @@ ip address 130.45.128.1 255.255.255.192
 !--Configurar un rango de interfaces
 int range g0/1-2
 
+!--Guardar la configuracion en el Arranque
+copy running-config startup-config
+
 !--Eliminar configuracion de Arranque
 erase startup-config
 

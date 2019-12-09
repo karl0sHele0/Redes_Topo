@@ -1,0 +1,25 @@
+!--Configuracion de Router Bajas [Subinterfaces VLAN'ss & RIP]
+en
+conf t
+host Bajas
+
+int g0/0.50
+enc dot1q 50
+ip addr 130.45.1.1 255.255.255.128
+
+int g0/0.55
+enc dot1q 55
+ip addr 130.45.1.129 255.255.255.128
+
+int g0/0
+no shut
+
+int s0/0/0
+ip addr 10.0.3.2 255.255.255.0
+no shut
+
+router rip
+version 2
+no auto-summary
+network 10.0.1.0
+network 130.45.172.0

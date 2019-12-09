@@ -1,0 +1,18 @@
+!--Configuracion VLAN en Sw_Occidente
+en
+conf t
+host Sw_Occidente
+
+int range f0/1-12
+sw mo acc
+sw acc vl 70
+
+int range f0/13-24
+sw mo acc
+sw acc vl 75
+
+int range g0/1-2
+sw mo tr
+
+do sh vl br
+

@@ -1,0 +1,17 @@
+!--Configuracion VLAN en Sw_Bajas
+en
+conf t
+host Sw_Bajas
+
+int range f0/1-12
+sw mo acc
+sw acc vl 50
+
+int range f0/13-24
+sw mo acc
+sw acc vl 55
+
+int range g0/1-2
+sw mo tr
+
+do sh vl br

@@ -1,0 +1,26 @@
+!--Configuracion de Router Occidente [Subinterfaces VLAN'ss & RIP]
+en
+conf t
+host Occidente
+
+int g0/0.70
+enc dot1q 70
+ip addr 130.45.172.1 255.255.255.128
+
+int g0/0.75
+enc dot1q 75
+ip addr 130.45.172.129 255.255.255.128
+
+int g0/0
+no shut
+
+int s0/0/0
+ip addr 10.0.1.2 255.255.255.0
+no shut
+
+router rip
+version 2
+no auto-summary
+network 10.0.1.0
+network 130.45.172.0
+

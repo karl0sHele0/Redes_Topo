@@ -23,12 +23,16 @@ int g0/0
 no shut
 
 int s0/0/0
-ip addr 10.10.0.2 255.0.0.0
-no shut 
+ip addr 10.0.0.2 255.255.255.0
+no shut
+
+int s0/0/1
+ip addr 10.0.1.0 255.255.255.0
+no shut
 
 router rip
 version 2
 no auto-summary
-network 10.10.0.0
+network 10.0.0.0
 network 130.45.128.0
 
